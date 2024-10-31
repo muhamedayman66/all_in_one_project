@@ -1,38 +1,49 @@
-import 'package:calculator_app/calculator_app.dart';
-import 'package:basket_app/basket_app.dart';
+import 'package:doctor_app_project/core/routes/routes_name.dart';
+import 'package:doctor_app_project/pages/appointment_page.dart';
+import 'package:doctor_app_project/pages/doctors_page.dart';
+import 'package:doctor_app_project/pages/home_page.dart';
+import 'package:doctor_app_project/pages/serena_gome_page.dart';
+import 'package:doctor_app_project/pages/settings_page.dart';
+import 'package:doctor_app_project/pages/sign_in_page.dart';
+import 'package:doctor_app_project/pages/sign_up_page.dart';
+import 'package:doctor_app_project/pages/splash_page.dart';
+
 import 'package:flutter/material.dart';
-import 'package:lighter_app/lighter.dart';
-import 'package:all_in_one_project/core/routes/routes_name.dart';
-import 'package:all_in_one_project/pages/home_screen.dart';
-import 'package:all_in_one_project/pages/splash_screen.dart';
-import 'package:xo_app/xo_app.dart';
 
 class AppRoute {
   static Route<dynamic> generate(RouteSettings? settings) {
     switch (settings?.name) {
       case RoutesName.splash:
         return MaterialPageRoute(builder: (_) {
-          return const SplashScreen();
+          return SplashPage();
         });
-      case RoutesName.home:
+      case RoutesName.Home:
         return MaterialPageRoute(builder: (_) {
-          return const HomeScreen();
+          return HomePage();
         });
-      case RoutesName.xoApp:
+      case RoutesName.SignUp:
         return MaterialPageRoute(builder: (_) {
-          return const XoApp();
+          return SignUpPage();
         });
-      case RoutesName.calculatorApp:
+      case RoutesName.SignIn:
         return MaterialPageRoute(builder: (_) {
-          return const CalculatorApp();
+          return SignInPage();
         });
-      case RoutesName.basketApp:
+      case RoutesName.Appointment:
         return MaterialPageRoute(builder: (_) {
-          return const BasketAppScreen();
+          return AppointmentPage();
         });
-      case RoutesName.lighterApp:
+      case RoutesName.Doctors:
         return MaterialPageRoute(builder: (_) {
-          return const LighterScreen();
+          return DoctorsPage();
+        });
+      case RoutesName.Serena:
+        return MaterialPageRoute(builder: (_) {
+          return SerenaGomePage();
+        });
+      case RoutesName.Setting:
+        return MaterialPageRoute(builder: (_) {
+          return SettingsPage();
         });
       default:
         throw Exception('Route not found!');
